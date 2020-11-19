@@ -1,4 +1,5 @@
-who = input('Who would you like to search for?: ')
+who = input('Who would you like to search for? ')
+whob = False
 def ipwriterr():
 	newname = input('name: ')
 	newip = input('ip: ')
@@ -8,11 +9,15 @@ def ipwriterr():
 with open("iplist.txt") as ip:
 	for line in ip.readlines():
 		if who in line:
+			whob = True
 			print( line )
 			ip.seek(0)
 
+if whob == False:
+	print(f"[-] Cannot find {who}.")
 
-add = input('Would you like to add anyone? y/n: ')
+
+add = input('Would you like to add anyone to the list? y/N ')
 if add == "y":
 	ipwriterr()
 elif add == "Y":
