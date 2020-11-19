@@ -2,10 +2,10 @@ who = input('Who would you like to search? no caps ')
 def ipwriterr():
 	newname = input('name: ')
 	newip = input('ip: ')
-	with open('test.txt',mode='a') as ip_write:
+	with open('iplist.txt',mode='a') as ip_write:
 		ip_write.write(f"\n{newname} {newip}")
 
-with open("test.txt") as ip:
+with open("iplist.txt") as ip:
 	for line in ip.readlines():
 		if who in line:
 			print( line )
