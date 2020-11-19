@@ -15,4 +15,4 @@ if add == "y":
 	with open('test.txt',mode='r+') as ip_write:
 		ip_write.write(f'\n{newname} {newip}')
 else:
-	pass4
+	pass
