@@ -6,7 +6,7 @@ from getpass import getpass
 class Login:
     def __init__(self):
         self.loggedin = False
-        self.storage = ''
+        #self.storage = ''
     def signup(self):
         while True:
             username = input('What would you like to use as your username? 12 characters MAX. ')
