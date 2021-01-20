@@ -5,3 +5,5 @@ To use IP Finder, add a name and an ip address to iplist.txt however you want as
 To use dvdsearch you can run it by running "python dvdsearch.py" or "py dvdsearch.py" and then just search the database. To add more dvd's you have to edit the dvds.txt file and add more in the same format that I did.
 
 To use login you can just run it and select which option to use. You must have a file named items.json in the same directory. Download mine or look at it as an example.
+
+To use openweather you just run it will ask for the city and country to search.
