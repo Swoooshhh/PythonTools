@@ -1,0 +1,44 @@
+import requests
+
+class hostfile:
+    def __init__(self):
+        self.basic = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
+        self.pornblock = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts'
+    def request(self,url):
+        res = requests.get(url)
+        data = res.text
+        with open('/etc/hosts', 'w') as f:
+            try:
+                f.write(data)
+            except OSError:
+                print("Error writing. Run this as admin.")
+    def choice(self):
+        while True:
+            choiced = input("What system do you use?\n 1. Linux \n 2. Windows (unreleased) \n 3. Mac OS (unreleased)\n > ")
+            choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but blocks porn too.\n > ')
+            if choiced == '1':
+                if choicetwo == '1':
+                    try:
+
+                        hostfile().request(self.basic)
+                        print('Success!')
+                        return False
+                    except OSError:
+                        print('Error writing. Run this as admin.')
+                        return False
+                elif choicetwo == '2':
+                    try:
+
+                        hostfile().request(self.pornblock)
+                        print('Success!')
+                        return False
+                    except OSError:
+                        print("Error writing. Run this as admin.")
+                        return False
+                else:
+                    print("Invalid option.")
+            elif choiced == '2':
+                pass
+            elif choiced == '3':
+                pass
+hostfile().choice()
