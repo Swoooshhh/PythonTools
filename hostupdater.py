@@ -8,7 +8,7 @@ class hostfile:
     def request(self,url):
         res = requests.get(url)
         data = res.text
-        with open('/etc/hosts', 'w') as f:
+        with open(path, 'w') as f:
             try:
                 f.write(data)
             except OSError:
