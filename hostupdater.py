@@ -3,7 +3,8 @@ import requests
 class hostfile:
     def __init__(self):
         self.basic = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
-        self.pornblock = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts'
+        self.familyprotect = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts'
+
     def request(self,url):
         res = requests.get(url)
         data = res.text
@@ -15,7 +16,7 @@ class hostfile:
     def choice(self):
         while True:
             choiced = input("What system do you use?\n 1. Linux \n 2. Windows (unreleased) \n 3. Mac OS (unreleased)\n > ")
-            choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but blocks porn too.\n > ')
+            choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but adds family protections (blocks porn).\n > ')
             if choiced == '1':
                 if choicetwo == '1':
                     try:
@@ -29,7 +30,7 @@ class hostfile:
                 elif choicetwo == '2':
                     try:
 
-                        hostfile().request(self.pornblock)
+                        hostfile().request(self.familyprotect)
                         print('Success!')
                         return False
                     except OSError:
@@ -41,4 +42,6 @@ class hostfile:
                 pass
             elif choiced == '3':
                 pass
+
+
 hostfile().choice()
