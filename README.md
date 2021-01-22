@@ -7,3 +7,5 @@ To use dvdsearch you can run it by running "python dvdsearch.py" or "py dvdsearc
 To use login you can just run it and select which option to use. You must have a file named items.json in the same directory. Download mine or look at it as an example.
 
 To use openweather you just run it will ask for the city and country to search.
+
+To use hostupdater run it with admin (sudo python hostupdater.py) and it will ask what kind of blocking to add. Like blocking trackers and ads
