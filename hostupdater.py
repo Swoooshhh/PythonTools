@@ -4,8 +4,7 @@ class hostfile:
     def __init__(self):
         self.basic = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
         self.familyprotect = 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn/hosts'
-
-    def request(self,url):
+    def request(self,path, url):
         res = requests.get(url)
         data = res.text
         with open(path, 'w') as f:
@@ -21,7 +20,7 @@ class hostfile:
                 if choicetwo == '1':
                     try:
 
-                        hostfile().request(self.basic)
+                        hostfile().request('/etc/hosts', self.basic)
                         print('Success!')
                         return False
                     except OSError:
@@ -30,7 +29,7 @@ class hostfile:
                 elif choicetwo == '2':
                     try:
 
-                        hostfile().request(self.familyprotect)
+                        hostfile().request('/etc/host', self.familyprotect)
                         print('Success!')
                         return False
                     except OSError:
@@ -42,6 +41,4 @@ class hostfile:
                 pass
             elif choiced == '3':
                 pass
-
-
 hostfile().choice()
