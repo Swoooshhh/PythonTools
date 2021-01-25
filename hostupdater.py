@@ -14,7 +14,7 @@ class hostfile:
                 print("Error writing. Run this as admin.")
     def choice(self):
         while True:
-            choiced = input("What system do you use?\n 1. Linux \n 2. Windows (unreleased) \n 3. Mac OS (unreleased)\n > ")
+            choiced = input("What system do you use?\n 1. Linux \n 2. Windows \n 3. Mac OS (unreleased)\n > ")
             choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but adds family protections (blocks porn).\n > ')
             if choiced == '1':
                 if choicetwo == '1':
@@ -38,7 +38,24 @@ class hostfile:
                 else:
                     print("Invalid option.")
             elif choiced == '2':
-                pass
+                if choicetwo == '1':
+                    try:
+
+                        hostfile().request('c:/windows/system32/drivers/etc/hosts', self.basic)
+                        print('Success!')
+                        return False
+                    except OSError:
+                        print('Error writing. Run this as admin.')
+                        return False
+                elif choicetwo == '2':
+                    try:
+
+                        hostfile().request('c:/windows/system32/drivers/etc/hosts', self.familyprotect)
+                        print('Success!')
+                        return False
+                    except OSError:
+                        print("Error writing. Run this as admin.")
+                        return False
             elif choiced == '3':
                 pass
 hostfile().choice()
