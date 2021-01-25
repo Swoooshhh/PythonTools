@@ -15,7 +15,7 @@ class hostfile:
     def choice(self):
         while True:
             choiced = input("What system do you use?\n 1. Linux \n 2. Windows \n 3. Mac OS (unreleased)\n > ")
-            choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but adds family protections (blocks porn).\n > ')
+            choicetwo = input('What kind of blocking would you like?\n 1. Basic ads, tracking and malware\n 2. Everything 1 has but adds family protections (blocks adult sites).\n > ')
             if choiced == '1':
                 if choicetwo == '1':
                     try:
