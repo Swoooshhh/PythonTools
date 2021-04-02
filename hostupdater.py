@@ -29,7 +29,7 @@ class hostfile:
                 elif choicetwo == '2':
                     try:
 
-                        hostfile().request('/etc/host', self.familyprotect)
+                        hostfile().request('/etc/hosts', self.familyprotect)
                         print('Success!')
                         return False
                     except OSError:
